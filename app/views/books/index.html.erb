@@ -1,0 +1,27 @@
+<h1>投稿一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>感想</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.body %></td>
+        <td><%= link_to '詳細', book_path(book) %></td>
+        <td><%= link_to '編集', edit_book_path(book) %></td> 
+        <td><%= button_to "削除", book_path(book), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to '新規投稿', new_book_path %>
+
+

@@ -1,0 +1,18 @@
+<h1>投稿編集</h1>
+
+<%= form_with(model: @book, url: book_path(@book), local: true, method: :patch) do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+  <%= form.submit '更新' %>
+<% end %>
+
+<%= link_to '詳細に戻る', book_path(@book) %> |
+<%= link_to '一覧に戻る', books_path %>

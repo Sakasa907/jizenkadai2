@@ -1,0 +1,8 @@
+<h1>投稿詳細</h1>
+
+<p><strong>タイトル:</strong> <%= @book.title %></p>
+<p><strong>感想:</strong> <%= @book.body %></p>
+
+<%= link_to '編集', edit_book_path(@book) %> |
+ 
+<%= link_to '一覧に戻る', books_path %>
