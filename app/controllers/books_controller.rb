@@ -14,10 +14,8 @@ class BooksController < ApplicationController
   
     def create
         @book = Book.new(book_params)
-        if @book.title.blank? || @book.body.blank?
-          flash.now[:error] = "タイトルと感想を両方入力してください！"
-          render 'new'
-        elsif @book.save
+      
+        if @book.save
           flash[:success] = "Book created successfully."
           redirect_to @book
         else
